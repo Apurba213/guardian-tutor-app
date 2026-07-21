@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Glassmorphism Styles for Tutors (emerald tint) and Guardians (rose tint) */
+.glass-tutor {
+  background: linear-gradient(135deg, rgba(209, 250, 229, 0.68) 0%, rgba(255, 255, 255, 0.88) 100%);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(16, 185, 129, 0.24); /* Emerald tint border */
+  box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.05),
+              inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-tutor:hover {
+  background: linear-gradient(135deg, rgba(167, 243, 208, 0.8) 0%, rgba(255, 255, 255, 0.94) 100%);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 15px 35px -5px rgba(16, 185, 129, 0.12),
+              inset 0 1px 3px rgba(255, 255, 255, 0.9),
+              0 0 20px 4px rgba(16, 185, 129, 0.05);
+}
+
+.glass-guardian {
+  background: linear-gradient(135deg, rgba(255, 235, 240, 0.72) 0%, rgba(255, 255, 255, 0.88) 100%);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(244, 63, 94, 0.24); /* Rose tint border */
+  box-shadow: 0 10px 30px -5px rgba(244, 63, 94, 0.08),
+              inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-guardian:hover {
+  background: linear-gradient(135deg, rgba(255, 220, 230, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-color: rgba(244, 63, 94, 0.4);
+  box-shadow: 0 15px 35px -5px rgba(244, 63, 94, 0.16),
+              inset 0 1px 3px rgba(255, 255, 255, 0.9),
+              0 0 20px 4px rgba(244, 63, 94, 0.06);
+}
+
+.glass-input-tutor {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease-in-out;
+}
+.glass-input-tutor:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12),
+              inset 0 1px 1px rgba(0, 0, 0, 0.01);
+  outline: none;
+}
+
+.glass-input-guardian {
+  background: rgba(255, 241, 242, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(244, 63, 94, 0.2);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease-in-out;
+}
+.glass-input-guardian:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(244, 63, 94, 0.6);
+  box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.12),
+              inset 0 1px 1px rgba(0, 0, 0, 0.01);
+  outline: none;
+}
+
+/* Custom scrollbars for bento grid overflow containers */
+.bento-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.bento-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bento-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.bento-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Super-glossy colorful glace glowing neon style */
+.glass-colorful-glace-neon {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-image: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(99, 102, 241, 0.08) 50%, rgba(16, 185, 129, 0.08) 100%);
+  box-shadow: 0 15px 35px 0 rgba(99, 102, 241, 0.15),
+              0 0 25px 0 rgba(236, 72, 153, 0.2),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.82);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 10;
+}
+.glass-colorful-glace-neon::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #10b981, #6366f1, #a855f7, #ec4899, #f59e0b, #10b981);
+  background-size: 300% 300%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(8px);
+  animation: dynamic-border-glow 8s ease infinite;
+  transition: all 0.4s ease;
+}
+.glass-colorful-glace-neon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px 0 rgba(99, 102, 241, 0.25),
+              0 0 35px 0 rgba(236, 72, 153, 0.35);
+}
+.glass-colorful-glace-neon:hover::after {
+  opacity: 0.85;
+  filter: blur(12px);
+}
+@keyframes dynamic-border-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Mobile Rendering Optimization to Prevent Display Flickering/Artifacts */
+@media (max-width: 768px) {
+  .glass-tutor,
+  .glass-guardian,
+  .glass-input-tutor,
+  .glass-input-guardian,
+  .glass-colorful-glace-neon {
+    /* Disable expensive backdrop blurring on mobile devices (prevents compositing loop flickers) */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .glass-tutor {
+    background: #f0fdf4 !important; /* solid light green fallback */
+    border-color: rgba(16, 185, 129, 0.35) !important;
+  }
+  
+  .glass-guardian {
+    background: #fff1f2 !important; /* solid light rose fallback */
+    border-color: rgba(244, 63, 94, 0.35) !important;
+  }
+
+  .glass-colorful-glace-neon {
+    background: #fafafa !important;
+    background-image: none !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .glass-colorful-glace-neon::after {
+    display: none !important; /* remove expensive glowing filter animations on mobile */
+  }
+
+  /* Render paths on mobile directly with GPU layers to prevent flicker */
+  svg, path, circle {
+    will-change: transform;
+    transform: translateZ(0); /* force hardware acceleration */
+  }
+}
+

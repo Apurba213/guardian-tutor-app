@@ -1,0 +1,109 @@
+{
+  "entities": {
+    "UserAccount": {
+      "title": "UserAccount",
+      "description": "User account schema stored and verified globally in Firestore.",
+      "type": "object",
+      "properties": {
+        "gmail": { "type": "string", "description": "Normalized lowercase Gmail address" },
+        "name": { "type": "string", "description": "Human name" },
+        "mobile": { "type": "string", "description": "Mobile number" },
+        "role": { "type": "string", "enum": ["tutor", "guardian"], "description": "User role choice" },
+        "passwordHash": { "type": "string", "description": "Login password" },
+        "institution": { "type": "string", "description": "Optional name of study institute" }
+      },
+      "required": ["gmail", "name", "mobile", "role", "passwordHash"]
+    },
+    "TutorStudent": {
+      "title": "TutorStudent",
+      "description": "Students managed by a tutor.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerGmail": { "type": "string" },
+        "name": { "type": "string" },
+        "schoolOrCollege": { "type": "string" },
+        "medium": { "type": "string", "enum": ["bangla", "english", "cambridge"] },
+        "className": { "type": "string" },
+        "groupName": { "type": "string" },
+        "subjects": { "type": "array" },
+        "daysPerWeek": { "type": "array" },
+        "salary": { "type": "number" },
+        "location": { "type": "string" },
+        "parentNumber": { "type": "string" }
+      },
+      "required": ["id", "ownerGmail", "name", "salary"]
+    },
+    "GuardianTeacher": {
+      "title": "GuardianTeacher",
+      "description": "Tutors managed by a guardian/parent.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerGmail": { "type": "string" },
+        "name": { "type": "string" },
+        "address": { "type": "string" },
+        "subjects": { "type": "array" },
+        "salary": { "type": "number" },
+        "mobile": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "qualification": { "type": "string" },
+        "daysPerWeek": { "type": "array" },
+        "timeSlot": { "type": "string" }
+      },
+      "required": ["id", "ownerGmail", "name", "salary"]
+    },
+    "AttendanceRecord": {
+      "title": "AttendanceRecord",
+      "description": "Daily attendance logs for students or teachers.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerGmail": { "type": "string" },
+        "studentOrTeacherId": { "type": "string" },
+        "year": { "type": "number" },
+        "month": { "type": "number" },
+        "dayLogs": { "type": "object" }
+      },
+      "required": ["id", "ownerGmail", "studentOrTeacherId", "year", "month"]
+    },
+    "SalaryPayment": {
+      "title": "SalaryPayment",
+      "description": "Fee payment tracking entries.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerGmail": { "type": "string" },
+        "studentOrTeacherId": { "type": "string" },
+        "year": { "type": "number" },
+        "month": { "type": "number" },
+        "status": { "type": "string", "enum": ["paid", "unpaid"] },
+        "paymentDate": { "type": "string" },
+        "amount": { "type": "number" }
+      },
+      "required": ["id", "ownerGmail", "studentOrTeacherId", "year", "month", "status", "amount"]
+    }
+  },
+  "firestore": {
+    "/accounts/{gmail}": {
+      "schema": "UserAccount",
+      "description": "Primary user profiles matched by lowercase gmail"
+    },
+    "/students/{studentId}": {
+      "schema": "TutorStudent",
+      "description": "Tutor registered student diaries"
+    },
+    "/teachers/{teacherId}": {
+      "schema": "GuardianTeacher",
+      "description": "Guardian registered private tutor cards"
+    },
+    "/attendance/{recordId}": {
+      "schema": "AttendanceRecord",
+      "description": "Activity attendance sheets"
+    },
+    "/salaries/{paymentId}": {
+      "schema": "SalaryPayment",
+      "description": "Financial records of salaries"
+    }
+  }
+}

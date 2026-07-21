@@ -1,0 +1,6 @@
+{
+  "name": "Tutors' Diary",
+  "description": "A comprehensive tracking diary for private tutors and guardians/parents using BDT currency and custom GitHub activity attendance grids.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
