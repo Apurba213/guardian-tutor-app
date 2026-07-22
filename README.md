@@ -98,6 +98,24 @@ This project demonstrates practical experience with **AI-assisted development, m
 
 ---
 ---
+## 🚀 Getting Started
+
+Follow the steps below to run the project locally.
+
+### 📋 Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) — LTS version recommended
+- npm — included with Node.js
+- Git
+### 📥 Installation
+
+#### 1. Clone the repository
+
+```bash
+git clone https://github.com/Apurba213/guardian-tutor-app.git
+```
 
 ## 🏗️ Application Architecture
 
@@ -137,3 +155,6 @@ The application follows a modern frontend and cloud-based architecture:
 │                                             │
 │              Google Cloud Run               │
 └─────────────────────────────────────────────┘
+```
+
+---
