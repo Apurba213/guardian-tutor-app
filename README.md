@@ -30,3 +30,24 @@
 - 🔍 **Tutor Matching** — Help connect students and guardians with suitable tutors
 
 ---
+---
+
+## 🖥️ Application Preview
+
+### 🏠 Landing Page
+
+![Guardian Tutor App - Landing Page](./assets/landing-page.png)
+
+### 👨‍🏫 Tutor Dashboard
+
+![Guardian Tutor App - Tutor Dashboard](./assets/tutor-dashboard.png)
+
+### 👨‍👩‍👧 Guardian Dashboard
+
+![Guardian Tutor App - Guardian Dashboard](./assets/guardian-dashboard.png)
+
+### 📊 Analytics Dashboard
+
+![Guardian Tutor App - Analytics Dashboard](./assets/attendance-dashboard.png)
+
+---
