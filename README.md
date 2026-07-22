@@ -76,3 +76,24 @@
 ![Google Cloud Run](https://img.shields.io/badge/Google_Cloud_Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
 
 ---
+---
+
+## 🧠 Development Approach
+
+This project was initially prototyped using **Google AI Studio** and developed through an AI-assisted software development workflow.
+
+The application was then configured, tested, refined, and deployed as a functional web application, with a focus on building a practical platform for tutoring management and student progress tracking.
+
+The development process involved:
+
+- 🧩 Designing and refining application features
+- 🎨 Building and improving the user interface
+- 🗄️ Integrating Firebase and Cloud Firestore
+- 📊 Implementing dashboards and data visualization
+- 🔐 Configuring authentication and application access
+- 🧪 Testing application functionality
+- 🚀 Deploying the application to Google Cloud Run
+
+This project demonstrates practical experience with **AI-assisted development, modern frontend engineering, cloud services, database integration, and application deployment**.
+
+---
